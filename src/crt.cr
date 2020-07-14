@@ -23,12 +23,10 @@ module Crt
     LibNcursesw.nonl
     LibNcursesw.intrflush(stdscr, false)
     LibNcursesw.keypad(stdscr, true)
-    LibNcursesw.curs_set(0)
   end
 
   def self.done
     if @@initialized
-      LibNcursesw.curs_set(1)
       LibNcursesw.endwin
       @@initialized = false
     end
